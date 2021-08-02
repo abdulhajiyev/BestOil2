@@ -194,6 +194,7 @@ namespace BestOil2
             this.colaCB.UncheckedState.BorderThickness = 0;
             this.colaCB.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.colaCB.UseVisualStyleBackColor = false;
+            this.colaCB.CheckedChanged += new System.EventHandler(this.colaCB_CheckedChanged);
             // 
             // friesCB
             // 
@@ -216,6 +217,7 @@ namespace BestOil2
             this.friesCB.UncheckedState.BorderThickness = 0;
             this.friesCB.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.friesCB.UseVisualStyleBackColor = false;
+            this.friesCB.CheckedChanged += new System.EventHandler(this.friesCB_CheckedChanged);
             // 
             // hamburgerCB
             // 
@@ -238,6 +240,7 @@ namespace BestOil2
             this.hamburgerCB.UncheckedState.BorderThickness = 0;
             this.hamburgerCB.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.hamburgerCB.UseVisualStyleBackColor = false;
+            this.hamburgerCB.CheckedChanged += new System.EventHandler(this.hamburgerCB_CheckedChanged);
             // 
             // hotdogCB
             // 
@@ -260,6 +263,7 @@ namespace BestOil2
             this.hotdogCB.UncheckedState.BorderThickness = 0;
             this.hotdogCB.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.hotdogCB.UseVisualStyleBackColor = false;
+            this.hotdogCB.CheckedChanged += new System.EventHandler(this.hotdogCB_CheckedChanged);
             // 
             // cafeSumPanel
             // 
@@ -353,6 +357,7 @@ namespace BestOil2
             this.priceRadio.UncheckedState.FillColor = System.Drawing.Color.Transparent;
             this.priceRadio.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
             this.priceRadio.UseVisualStyleBackColor = true;
+            this.priceRadio.CheckedChanged += new System.EventHandler(this.priceRadio_CheckedChanged);
             // 
             // literRadio
             // 
@@ -378,6 +383,7 @@ namespace BestOil2
             this.literRadio.UncheckedState.FillColor = System.Drawing.Color.Transparent;
             this.literRadio.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
             this.literRadio.UseVisualStyleBackColor = true;
+            this.literRadio.CheckedChanged += new System.EventHandler(this.literRadio_CheckedChanged);
             // 
             // gasPrice
             // 
@@ -423,6 +429,7 @@ namespace BestOil2
             this.moneyAmount.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(177)))), ((int)(((byte)(188)))));
             this.moneyAmount.HoverState.Parent = this.moneyAmount;
             this.moneyAmount.Location = new System.Drawing.Point(154, 203);
+            this.moneyAmount.MaxLength = 3;
             this.moneyAmount.Name = "moneyAmount";
             this.moneyAmount.PasswordChar = '\0';
             this.moneyAmount.PlaceholderText = "";
@@ -430,6 +437,7 @@ namespace BestOil2
             this.moneyAmount.ShadowDecoration.Parent = this.moneyAmount;
             this.moneyAmount.Size = new System.Drawing.Size(125, 26);
             this.moneyAmount.TabIndex = 1;
+            this.moneyAmount.TextChanged += new System.EventHandler(this.moneyAmount_TextChanged);
             // 
             // literAmount
             // 
@@ -449,6 +457,7 @@ namespace BestOil2
             this.literAmount.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(177)))), ((int)(((byte)(188)))));
             this.literAmount.HoverState.Parent = this.literAmount;
             this.literAmount.Location = new System.Drawing.Point(154, 163);
+            this.literAmount.MaxLength = 3;
             this.literAmount.Name = "literAmount";
             this.literAmount.PasswordChar = '\0';
             this.literAmount.PlaceholderText = "";
@@ -456,6 +465,7 @@ namespace BestOil2
             this.literAmount.ShadowDecoration.Parent = this.literAmount;
             this.literAmount.Size = new System.Drawing.Size(125, 26);
             this.literAmount.TabIndex = 1;
+            this.literAmount.TextChanged += new System.EventHandler(this.literAmount_TextChanged);
             // 
             // gasPriceTextBox
             // 
@@ -465,11 +475,12 @@ namespace BestOil2
             this.gasPriceTextBox.BorderThickness = 2;
             this.gasPriceTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.gasPriceTextBox.DefaultText = "";
-            this.gasPriceTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.gasPriceTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.gasPriceTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.gasPriceTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(136)))), ((int)(((byte)(152)))));
+            this.gasPriceTextBox.DisabledState.FillColor = System.Drawing.Color.Transparent;
+            this.gasPriceTextBox.DisabledState.ForeColor = System.Drawing.Color.Transparent;
             this.gasPriceTextBox.DisabledState.Parent = this.gasPriceTextBox;
-            this.gasPriceTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.gasPriceTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.Transparent;
+            this.gasPriceTextBox.Enabled = false;
             this.gasPriceTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(82)))), ((int)(((byte)(102)))));
             this.gasPriceTextBox.FocusedState.Parent = this.gasPriceTextBox;
             this.gasPriceTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(177)))), ((int)(((byte)(188)))));
@@ -507,6 +518,7 @@ namespace BestOil2
             this.gasComboBox.Size = new System.Drawing.Size(171, 26);
             this.gasComboBox.TabIndex = 0;
             this.gasComboBox.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            this.gasComboBox.SelectedIndexChanged += new System.EventHandler(this.gasComboBox_SelectedIndexChanged);
             // 
             // hotdogPrice
             // 
@@ -521,6 +533,7 @@ namespace BestOil2
             this.hotdogPrice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.hotdogPrice.DisabledState.Parent = this.hotdogPrice;
             this.hotdogPrice.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.hotdogPrice.Enabled = false;
             this.hotdogPrice.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(82)))), ((int)(((byte)(102)))));
             this.hotdogPrice.FocusedState.Parent = this.hotdogPrice;
             this.hotdogPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(177)))), ((int)(((byte)(188)))));
@@ -547,11 +560,13 @@ namespace BestOil2
             this.hotdogQuantity.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.hotdogQuantity.DisabledState.Parent = this.hotdogQuantity;
             this.hotdogQuantity.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.hotdogQuantity.Enabled = false;
             this.hotdogQuantity.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(82)))), ((int)(((byte)(102)))));
             this.hotdogQuantity.FocusedState.Parent = this.hotdogQuantity;
             this.hotdogQuantity.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(177)))), ((int)(((byte)(188)))));
             this.hotdogQuantity.HoverState.Parent = this.hotdogQuantity;
             this.hotdogQuantity.Location = new System.Drawing.Point(218, 46);
+            this.hotdogQuantity.MaxLength = 3;
             this.hotdogQuantity.Name = "hotdogQuantity";
             this.hotdogQuantity.PasswordChar = '\0';
             this.hotdogQuantity.PlaceholderText = "";
@@ -559,6 +574,8 @@ namespace BestOil2
             this.hotdogQuantity.ShadowDecoration.Parent = this.hotdogQuantity;
             this.hotdogQuantity.Size = new System.Drawing.Size(62, 26);
             this.hotdogQuantity.TabIndex = 6;
+            this.hotdogQuantity.TextChanged += new System.EventHandler(this.hotdogQuantity_TextChanged);
+            this.hotdogQuantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.hotdogQuantity_KeyPress);
             // 
             // hamburgerPrice
             // 
@@ -573,6 +590,7 @@ namespace BestOil2
             this.hamburgerPrice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.hamburgerPrice.DisabledState.Parent = this.hamburgerPrice;
             this.hamburgerPrice.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.hamburgerPrice.Enabled = false;
             this.hamburgerPrice.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(82)))), ((int)(((byte)(102)))));
             this.hamburgerPrice.FocusedState.Parent = this.hamburgerPrice;
             this.hamburgerPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(177)))), ((int)(((byte)(188)))));
@@ -599,11 +617,13 @@ namespace BestOil2
             this.hamburgerQuantity.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.hamburgerQuantity.DisabledState.Parent = this.hamburgerQuantity;
             this.hamburgerQuantity.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.hamburgerQuantity.Enabled = false;
             this.hamburgerQuantity.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(82)))), ((int)(((byte)(102)))));
             this.hamburgerQuantity.FocusedState.Parent = this.hamburgerQuantity;
             this.hamburgerQuantity.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(177)))), ((int)(((byte)(188)))));
             this.hamburgerQuantity.HoverState.Parent = this.hamburgerQuantity;
             this.hamburgerQuantity.Location = new System.Drawing.Point(218, 97);
+            this.hamburgerQuantity.MaxLength = 3;
             this.hamburgerQuantity.Name = "hamburgerQuantity";
             this.hamburgerQuantity.PasswordChar = '\0';
             this.hamburgerQuantity.PlaceholderText = "";
@@ -611,6 +631,8 @@ namespace BestOil2
             this.hamburgerQuantity.ShadowDecoration.Parent = this.hamburgerQuantity;
             this.hamburgerQuantity.Size = new System.Drawing.Size(62, 26);
             this.hamburgerQuantity.TabIndex = 6;
+            this.hamburgerQuantity.TextChanged += new System.EventHandler(this.hamburgerQuantity_TextChanged);
+            this.hamburgerQuantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.hamburgerQuantity_KeyPress);
             // 
             // friesPrice
             // 
@@ -625,6 +647,7 @@ namespace BestOil2
             this.friesPrice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.friesPrice.DisabledState.Parent = this.friesPrice;
             this.friesPrice.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.friesPrice.Enabled = false;
             this.friesPrice.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(82)))), ((int)(((byte)(102)))));
             this.friesPrice.FocusedState.Parent = this.friesPrice;
             this.friesPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(177)))), ((int)(((byte)(188)))));
@@ -651,11 +674,13 @@ namespace BestOil2
             this.friesQuantity.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.friesQuantity.DisabledState.Parent = this.friesQuantity;
             this.friesQuantity.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.friesQuantity.Enabled = false;
             this.friesQuantity.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(82)))), ((int)(((byte)(102)))));
             this.friesQuantity.FocusedState.Parent = this.friesQuantity;
             this.friesQuantity.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(177)))), ((int)(((byte)(188)))));
             this.friesQuantity.HoverState.Parent = this.friesQuantity;
             this.friesQuantity.Location = new System.Drawing.Point(218, 154);
+            this.friesQuantity.MaxLength = 3;
             this.friesQuantity.Name = "friesQuantity";
             this.friesQuantity.PasswordChar = '\0';
             this.friesQuantity.PlaceholderText = "";
@@ -663,6 +688,8 @@ namespace BestOil2
             this.friesQuantity.ShadowDecoration.Parent = this.friesQuantity;
             this.friesQuantity.Size = new System.Drawing.Size(62, 26);
             this.friesQuantity.TabIndex = 6;
+            this.friesQuantity.TextChanged += new System.EventHandler(this.friesQuantity_TextChanged);
+            this.friesQuantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.friesQuantity_KeyPress);
             // 
             // colaPrice
             // 
@@ -677,6 +704,7 @@ namespace BestOil2
             this.colaPrice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.colaPrice.DisabledState.Parent = this.colaPrice;
             this.colaPrice.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.colaPrice.Enabled = false;
             this.colaPrice.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(82)))), ((int)(((byte)(102)))));
             this.colaPrice.FocusedState.Parent = this.colaPrice;
             this.colaPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(177)))), ((int)(((byte)(188)))));
@@ -703,11 +731,13 @@ namespace BestOil2
             this.colaQuantity.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.colaQuantity.DisabledState.Parent = this.colaQuantity;
             this.colaQuantity.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.colaQuantity.Enabled = false;
             this.colaQuantity.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(82)))), ((int)(((byte)(102)))));
             this.colaQuantity.FocusedState.Parent = this.colaQuantity;
             this.colaQuantity.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(177)))), ((int)(((byte)(188)))));
             this.colaQuantity.HoverState.Parent = this.colaQuantity;
             this.colaQuantity.Location = new System.Drawing.Point(218, 203);
+            this.colaQuantity.MaxLength = 3;
             this.colaQuantity.Name = "colaQuantity";
             this.colaQuantity.PasswordChar = '\0';
             this.colaQuantity.PlaceholderText = "";
@@ -715,6 +745,8 @@ namespace BestOil2
             this.colaQuantity.ShadowDecoration.Parent = this.colaQuantity;
             this.colaQuantity.Size = new System.Drawing.Size(62, 26);
             this.colaQuantity.TabIndex = 6;
+            this.colaQuantity.TextChanged += new System.EventHandler(this.colaQuantity_TextChanged);
+            this.colaQuantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.colaQuantity_KeyPress);
             // 
             // cafePriceLbl
             // 
@@ -768,8 +800,8 @@ namespace BestOil2
             this.totalSum.Name = "totalSum";
             this.totalSum.Size = new System.Drawing.Size(589, 137);
             this.totalSum.TabIndex = 0;
-            this.totalSum.Text = "PRICE";
             this.totalSum.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.totalSum.TextChanged += new System.EventHandler(this.totalSum_TextChanged);
             // 
             // gasSum
             // 
@@ -777,9 +809,8 @@ namespace BestOil2
             this.gasSum.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gasSum.Location = new System.Drawing.Point(10, 42);
             this.gasSum.Name = "gasSum";
-            this.gasSum.Size = new System.Drawing.Size(98, 29);
+            this.gasSum.Size = new System.Drawing.Size(0, 29);
             this.gasSum.TabIndex = 0;
-            this.gasSum.Text = "gasSum";
             // 
             // cafeSum
             // 
@@ -787,9 +818,8 @@ namespace BestOil2
             this.cafeSum.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cafeSum.Location = new System.Drawing.Point(10, 42);
             this.cafeSum.Name = "cafeSum";
-            this.cafeSum.Size = new System.Drawing.Size(106, 29);
+            this.cafeSum.Size = new System.Drawing.Size(0, 29);
             this.cafeSum.TabIndex = 0;
-            this.cafeSum.Text = "cafeSum";
             // 
             // Form1
             // 
