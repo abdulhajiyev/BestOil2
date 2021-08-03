@@ -37,22 +37,28 @@ namespace BestOil2
 
         private void literRadio_CheckedChanged(object sender, System.EventArgs e)
         {
-            literAmount.Enabled = true;
+            /*literAmount.Enabled = true;
             moneyAmount.Enabled = false;
             if (moneyAmount.Text == String.Empty) return;
-            try
+            try { moneyAmount.Text = default; }
+            catch { }*/
+
+            if (literRadio.Checked)
             {
-                moneyAmount.Text = default;
+                literAmount.Enabled = true;
+                moneyAmount.Enabled = false;
+                if (moneyAmount.Text == String.Empty) return;
             }
-            catch
+            else
             {
-                // ignored
+                moneyAmount.Text = "0";
+                moneyAmount.Text = "";
             }
         }
 
         private void priceRadio_CheckedChanged(object sender, EventArgs e)
         {
-            moneyAmount.Enabled = true;
+            /*moneyAmount.Enabled = true;
             literAmount.Enabled = false;
             if (literAmount.Text == String.Empty) return;
             try
@@ -62,6 +68,18 @@ namespace BestOil2
             catch
             {
                 // ignored
+            }*/
+
+            if (priceRadio.Checked)
+            {
+                moneyAmount.Enabled = true;
+                literAmount.Enabled = false;
+                if (literAmount.Text == String.Empty) return;
+            }
+            else
+            {
+                literAmount.Text = "0";
+                literAmount.Text = "";
             }
         }
 
@@ -201,6 +219,11 @@ namespace BestOil2
 
         private void hotdogQuantity_TextChanged(object sender, EventArgs e)
         {
+            /*if (hotdogQuantity.Text.StartsWith("0"))
+            {
+                hotdogQuantity.Text = "0";
+                hotdogQuantity.Text = String.Empty;
+            }*/
 
             if (hotdogQuantity.Text != String.Empty)
             {
@@ -220,6 +243,12 @@ namespace BestOil2
 
         private void hamburgerQuantity_TextChanged(object sender, EventArgs e)
         {
+            /*if (hamburgerQuantity.Text.StartsWith("0"))
+            {
+                hamburgerQuantity.Text = "0";
+                hamburgerQuantity.Text = String.Empty;
+            }*/
+
             if (hamburgerQuantity.Text != String.Empty)
             {
                 miniCafe.Foods[1].Count = int.Parse(hamburgerQuantity.Text);
@@ -230,12 +259,8 @@ namespace BestOil2
             }
             cafeSum.Text = miniCafe.GetPrice().ToString();
             totalSum.Text = miniCafe.GetPrice().ToString();
-            if (cafeSum.Text == "0")
-            {
-                cafeSum.Text = "";
-            }
 
-            if (cafeSum.Text.Length == 0)
+            if (cafeSum.Text == "0")
             {
                 cafeSum.Text = "";
             }
@@ -243,6 +268,12 @@ namespace BestOil2
 
         private void friesQuantity_TextChanged(object sender, EventArgs e)
         {
+            /*if (friesQuantity.Text.StartsWith("0"))
+            {
+                friesQuantity.Text = "0";
+                friesQuantity.Text = String.Empty;
+            }*/
+
             if (friesQuantity.Text != String.Empty)
             {
                 miniCafe.Foods[2].Count = int.Parse(friesQuantity.Text);
@@ -262,6 +293,12 @@ namespace BestOil2
 
         private void colaQuantity_TextChanged(object sender, EventArgs e)
         {
+           /* if (colaQuantity.Text.StartsWith("0"))
+            {
+                colaQuantity.Text = "0";
+                colaQuantity.Text = String.Empty;
+            }*/
+
             if (colaQuantity.Text != String.Empty)
             {
                 miniCafe.Foods[3].Count = int.Parse(colaQuantity.Text);
@@ -285,18 +322,26 @@ namespace BestOil2
 
         private void hotdogQuantity_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (hotdogQuantity.Text.Length == 0 && e.KeyChar == (int) Keys.D0)
+            {
+                e.Handled = true;
+            }
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
             }
 
-            if (e.KeyChar != (char) Keys.Back || hotdogQuantity.Text.Length != 1) return;
+            if (e.KeyChar != (char)Keys.Back || hotdogQuantity.Text.Length != 1) return;
             hotdogQuantity.Text = "0";
             hotdogQuantity.Text = "";
         }
 
         private void hamburgerQuantity_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (hamburgerQuantity.Text.Length == 0 && e.KeyChar == (int)Keys.D0)
+            {
+                e.Handled = true;
+            }
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
@@ -309,6 +354,10 @@ namespace BestOil2
 
         private void friesQuantity_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (friesQuantity.Text.Length == 0 && e.KeyChar == (int)Keys.D0)
+            {
+                e.Handled = true;
+            }
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
@@ -321,6 +370,42 @@ namespace BestOil2
 
         private void colaQuantity_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (colaQuantity.Text.Length == 0 && e.KeyChar == (int)Keys.D0)
+            {
+                e.Handled = true;
+            }
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+
+            if (e.KeyChar != (char)Keys.Back || colaQuantity.Text.Length != 1) return;
+            colaQuantity.Text = "0";
+            colaQuantity.Text = "";
+        }
+
+        private void literAmount_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (literAmount.Text.Length == 0 && e.KeyChar == (int)Keys.D0)
+            {
+                e.Handled = true;
+            }
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+
+            if (e.KeyChar != (char)Keys.Back || colaQuantity.Text.Length != 1) return;
+            colaQuantity.Text = "0";
+            colaQuantity.Text = "";
+        }
+
+        private void moneyAmount_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (moneyAmount.Text.Length == 0 && e.KeyChar == (int)Keys.D0)
+            {
+                e.Handled = true;
+            }
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
